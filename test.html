@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagination Example</title>
+  <style>
+    .content {
+      display: none;
+    }
+    .content.active {
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="row mt-5">
+    <div class="col text-center">
+      <div class="block-27">
+        <ul id="pagination">
+          <li><a href="#" id="prevPage">&lt;</a></li>
+          <li class="active"><span>1</span></li>
+          <li><a href="#" class="page">2</a></li>
+          <li><a href="#" class="page">3</a></li>
+          <li><a href="#" class="page">4</a></li>
+          <li><a href="#" class="page">5</a></li>
+          <li><a href="#" id="nextPage">&gt;</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="content active" id="content1">
+    <h2>Content 1</h2>
+    <p>This is the first content section.</p>
+  </div>
+  <div class="content" id="content2">
+    <h2>Content 2</h2>
+    <p>This is the second content section.</p>
+  </div>
+  <div class="content" id="content3">
+    <h2>Content 3</h2>
+    <p>This is the third content section.</p>
+  </div>
+  <div class="content" id="content4">
+    <h2>Content 4</h2>
+    <p>This is the fourth content section.</p>
+  </div>
+  <div class="content" id="content5">
+    <h2>Content 5</h2>
+    <p>This is the fifth content section.</p>
+  </div>
+
+  <script>
+    // JavaScript to handle pagination
+    const prevPageLink = document.getElementById('prevPage');
+    const nextPageLink = document.getElementById('nextPage');
+    const pageLinks = document.querySelectorAll('.page');
+    const contentSections = document.querySelectorAll('.content');
+    let currentPage = 1;
+
+    function updatePagination() {
+      pageLinks.forEach(link => link.classList.remove('active'));
+      pageLinks[currentPage - 1].classList.add('active');
+      
+      contentSections.forEach(section => section.classList.remove('active'));
+      contentSections[currentPage - 1].classList.add('active');
+    }
+
+    prevPageLink.addEventListener('click', () => {
+      if (currentPage > 1) {
+        currentPage--;
+        updatePagination();
+      }
+    });
+
+    nextPageLink.addEventListener('click', () => {
+      if (currentPage < pageLinks.length) {
+        currentPage++;
+        updatePagination();
+      }
+    });
+
+    pageLinks.forEach((link, index) => {
+      link.addEventListener('click', () => {
+        currentPage = index + 1;
+        updatePagination();
+      });
+    });
+  </script>
+</body>
+</html>
