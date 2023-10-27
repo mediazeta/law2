@@ -2114,7 +2114,7 @@ h1, h2, h3, h4, h5,
     font-size: 14px; }
   .getaquote-form h3 {
     padding: 20px;
-    padding-bottom: 25px;
+    padding-bottom: 28px;
     background: #f57000;
     color: #fff;
     font-size: 24px; }
@@ -2622,7 +2622,8 @@ textarea.form-control {
       -webkit-border-radius: 50px;
       -moz-border-radius: 50px;
       -ms-border-radius: 50px;
-      border-radius: 50px; } }
+      border-radius: 50px;
+      margin-top: 1rem; } }
   .step span {
     width: 60px;
     color: #f57000;
@@ -2992,7 +2993,7 @@ textarea.form-control {
 }
 
 .logo {
-  width: 18% !important;
+  width: 15% !important;
 }
 
 .container-header {
