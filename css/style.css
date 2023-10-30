@@ -2113,8 +2113,9 @@ h1, h2, h3, h4, h5,
     border: transparent !important;
     font-size: 14px; }
   .getaquote-form h3 {
+    margin-top: 0.5em;
     padding: 20px;
-    padding-bottom: 28px;
+    padding-bottom: 18px;
     background: #f57000;
     color: #fff;
     font-size: 24px; }
@@ -2997,6 +2998,6 @@ textarea.form-control {
 }
 
 .container-header {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+  padding-top: 0.6rem !important;
+  padding-bottom: 0.6rem !important;
 }
