@@ -96,6 +96,7 @@ body {
     -moz-perspective: 150rem;
     position: relative;
     height: 52rem;
+    min-width: 32rem;
 }
 
 .card__side {
