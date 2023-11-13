@@ -6,7 +6,8 @@
  */
 
 * {
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  color: #020202;
 }
 
 :root {
@@ -1677,7 +1678,7 @@ h1, h2, h3, h4, h5,
         padding-top: .6rem;
         padding-bottom: .6rem; } }
     .ftco-navbar-light .navbar-nav > .nav-item > .nav-link:hover {
-      color: var(--pactaria-purple); }
+      color: var(--pactaria-pink); }
   .ftco-navbar-light .navbar-nav > .nav-item .dropdown-menu {
     border: none;
     background: #fff;
