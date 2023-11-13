@@ -1698,7 +1698,7 @@ h1, h2, h3, h4, h5,
         color: #000000;
         background: transparent; }
   .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-    color: var(--pactaria-purple); }
+    color: var(--pactaria-pink); }
   .ftco-navbar-light .navbar-toggler {
     border: none;
     color: #000000 !important;
@@ -1717,7 +1717,7 @@ h1, h2, h3, h4, h5,
     -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
     .ftco-navbar-light.scrolled .nav-item.active > a {
-      color: var(--pactaria-purple) !important; }
+      color: var(--pactaria-pink) !important; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
