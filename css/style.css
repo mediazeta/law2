@@ -6,7 +6,8 @@
  */
 
 * {
-  /* font-family: 'Montserrat', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+  color: #020202;
 }
 
 :root {

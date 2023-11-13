@@ -275,8 +275,10 @@ body {
 }
 
 .services {
-    margin: 6em;
     margin-top: 0;
     margin-bottom: 0;
 }
 
+p {
+    color: white;
+}
