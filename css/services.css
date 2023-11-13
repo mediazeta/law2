@@ -252,7 +252,6 @@ body {
 }
 
 .row:not(:last-child) {
-    margin-bottom: 5rem;
     margin-top: 5rem;
 }
 
