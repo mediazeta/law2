@@ -46,6 +46,31 @@ body {
     transition: all .45s ease-in;
 }
 
+@media (max-width: 996px) {
+    .container {
+        padding-right: 2em;
+        padding-left: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .pr-md-5, .mr-md-5, .text-md-right {
+        margin-top: 3em;
+    }
+    .carousel__item {
+        font-size: 12px;
+        padding: 1em;
+        max-width: 100%;
+        width: 200px;
+        height: 350px;
+        /* Adjust as needed */
+    }
+
+    .carousel__item h3 {
+        font-size: 23px;
+    }
+   
+}
+
 .carousel__item:nth-child(1) {
     background: linear-gradient(45deg, var(--pactaria-purple) 0%, var(--pactaria-orange) 100%);
 }
