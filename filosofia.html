@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/cards.css">
 
   <style>
     body {
@@ -33,7 +34,7 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container container-header">
+    <div class="container container-header" style="width: 100%">
       <img class="logo" src="images/logo-full-white1.png">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
         aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,51 +76,35 @@
   <section class="ftco-section ftc-no-pb bg-primary" style="text-align: justify;">
     <div class="container">
       <div class="row no-gutters">
-        <div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center order-md-last"
-          style="background-image: url(images/pexels-ekaterina-bolovtsova-6077123.png);">
+        <div class="col-md-5">
+          <img src="../images/183d4e1a-4353-46d1-8c67-2766f0d68732.png" width="400px">
         </div>
-        <div class="col-md-7 wrap-about ftco-animate">
-          <div class="heading-section mb-5 pl-md-5">
-            <div class="pr-md-5 mr-md-5 text-md-right">
+        <div class="col-md-7 ftco-animate">
+          <div class="heading-section pl-md-5">
+            <div class="pr-md-5 mr-md-5 text-md-right" style="margin-bottom: -1.5em;">
               <span class="subheading" style="text-align:initial;">Pactaria legal</span>
-              <h2 class="mb-4" style="text-align:initial;">Nuestra Filosofía</h2>
+              <h2 style="text-align:initial;">Nuestra Filosofía</h2>
             </div>
           </div>
-          <div class="pr-md-5 pl-md-5 mr-md-5 mb-5">
-            <div class="services-wrap d-flex">
-              <div class="icon d-flex justify-content-center align-items-center">
-                <span class="flaticon-auction"></span>
-              </div>
-              <div class="media-body pr-4 order-md-first text-md-right">
-                <h3 class="heading" style="text-align:initial;">Calidad</h3>
-                <p style="text-align: justify;">Ofrecemos a nuestros clientes una forma distinta y alternativa de entender la abogacía,
-                   con un asesoramiento de alto nivel basado en la flexibilidad, las nuevas tecnologías y la prestación telemática de nuestros servicios. 
-                </p>
-              </div>
-            </div>
-            <div class="services-wrap d-flex">
-              <div class="icon d-flex justify-content-center align-items-center">
-                <span class="flaticon-commitment"></span>
-              </div>
-              <div class="media-body pr-4 order-md-first text-md-right">
-                <h3 class="heading" style="text-align:initial;">Compromiso</h3>
-                <p style="text-align: justify;">Desde hace más de 5 años, PACTARIA LEGAL ofrece a sus clientes el compromiso de prestación de un servicio legal 
-                  de alta calidad, basado en la excelencia, eficiencia y rapidez. 
-                </p>
-              </div>
-            </div>
-            <div class="services-wrap d-flex">
-              <div class="icon d-flex justify-content-center align-items-center">
-                <span class="flaticon-balance"></span>
-              </div>
-              <div class="media-body pr-4 order-md-first text-md-right">
-                <h3 class="heading" style="text-align:initial;">Flexibilidad</h3>
-                <p style="text-align: justify;">Creemos firmemente que es el momento de que los servicios legales se adapten a las necesidades y 
-                  prioridades de nuestros clientes, y por ello les ofrecemos una propuesta alternativa, innovadora, 
-                  versátil y flexible, comprometida con las necesidades de nuestros clientes.
-                </p>
-              </div>
-            </div>
+          <div class="carousel">
+            <ul class="carousel__list">
+              <li class="carousel__item" data-pos="-1">
+                <h3 style="color: white; text-align: center;">CALIDAD</h3>
+                Ofrecemos a nuestros clientes una forma distinta y alternativa de entender la abogacía,
+                     con un asesoramiento de alto nivel basado en la flexibilidad, las nuevas tecnologías y la prestación telemática de nuestros servicios. 
+              </li>
+              <li class="carousel__item" data-pos="0">
+                <h3 style="color: white; text-align: center;">COMPROMISO</h3>
+                Desde hace más de 5 años, PACTARIA LEGAL ofrece a sus clientes el compromiso de prestación de un servicio legal 
+                    de alta calidad, basado en la excelencia, eficiencia y rapidez.
+              </li>
+              <li class="carousel__item" data-pos="1">
+                <h3 style="color: white; text-align: center;">FLEXIBILIDAD</h3>
+                Creemos firmemente que es el momento de que los servicios legales se adapten a las necesidades y 
+                    prioridades de nuestros clientes, y por ello les ofrecemos una propuesta alternativa, innovadora, 
+                    versátil y flexible, comprometida con las necesidades de nuestros clientes.
+              </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -254,6 +239,49 @@
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
+  <script>
+    const state = {};
+    const carouselList = document.querySelector('.carousel__list');
+    const carouselItems = document.querySelectorAll('.carousel__item');
+    const elems = Array.from(carouselItems);
+
+    carouselList.addEventListener('click', function (event) {
+      var newActive = event.target;
+      var isItem = newActive.closest('.carousel__item');
+
+      if (!isItem || newActive.classList.contains('carousel__item_active')) {
+        return;
+      };
+
+      update(newActive);
+    });
+
+    const update = function (newActive) {
+      const newActivePos = newActive.dataset.pos;
+
+      const current = elems.find((elem) => elem.dataset.pos == 0);
+      const prev = elems.find((elem) => elem.dataset.pos == -1);
+      const next = elems.find((elem) => elem.dataset.pos == 1);
+
+      current.classList.remove('carousel__item_active');
+
+      [current, prev, next].forEach(item => {
+        var itemPos = item.dataset.pos;
+
+        item.dataset.pos = getPos(itemPos, newActivePos)
+      });
+    };
+
+    const getPos = function (current, active) {
+      const diff = current - active;
+
+      if (Math.abs(current - active) > 1) {
+        return -current
+      }
+
+      return diff;
+    }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
