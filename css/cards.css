@@ -49,8 +49,8 @@ body {
 @media (max-width: 996px) {
     .container {
         padding-right: 2em;
-        padding-left: 0;
-        margin-left: 0;
+        padding-left: 1em;
+        margin-left: 10px;
         margin-right: 0;
     }
     .pr-md-5, .mr-md-5, .text-md-right {
